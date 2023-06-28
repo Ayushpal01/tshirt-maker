@@ -1,5 +1,6 @@
 import express from 'express';
 import * as dotenv from 'dotenv';
+import {env} from 'node:process';
 import { Configuration, OpenAIApi } from 'openai';
 
 dotenv.config();
@@ -7,7 +8,9 @@ dotenv.config();
 const router = express.Router();
 
 const config = new Configuration({
-  apiKey: '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',
+  // apiKey: env.OPENAI_API_KEY,
+  apiKey: "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",
+
 });
 
 const openai = new OpenAIApi(config);
